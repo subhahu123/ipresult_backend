@@ -1,0 +1,22 @@
+{
+  "name": "ipresult_backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/subhahu123/ipresult_backend.git"
+  },
+  "author": "subhahu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/subhahu123/ipresult_backend/issues"
+  },
+  "homepage": "https://github.com/subhahu123/ipresult_backend#readme",
+  "dependencies": {
+    "mongodb": "^3.2.7"
+  }
+}
