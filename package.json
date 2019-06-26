@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon index.js"
   },
   "repository": {
     "type": "git",
@@ -18,6 +19,7 @@
   "homepage": "https://github.com/subhahu123/ipresult_backend#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "mongodb": "^3.2.7"
+    "mongodb": "^3.2.7",
+    "mongoose": "^5.6.1"
   }
 }
