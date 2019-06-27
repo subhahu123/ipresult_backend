@@ -13,11 +13,13 @@ pattern = /(\d+) ((\w+ )+)SID: .* SchemeID: .*(\r\n)+((\d+\(\d\) *)+)(\r\n)+(\d+
 fs.readFile('./data.txt', (err, data) => {
     if(err) throw err ;
     data = data.toString() ;
-    results = pattern.exec(data) ;
-    results = data.match(pattern) ;
-    results.forEach( element => {
+    while( (results = pattern.exec(data)) != null ) {
+        console.log( results[1] + " " + results[2] +  " " + results[5] + " " + results[8] + " " + results[10] + " " + results[12] ) ;
+    }
+    //results = data.match(pattern) ;
+    /*results.forEach( element => {
         console.log(element) ;
-    });
+    });*/
     //console.log(data.toString()) ;
 })
 
