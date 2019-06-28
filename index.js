@@ -3,7 +3,20 @@ const app = express() ;
 const Mongoose = require("mongoose");
 const fs = require('fs') ;
 
-// Mongoose.connect("mongodb://result:ipusem3@ds211029.mlab.com:11029/ipresults") ;
+Mongoose.connect("mongodb://result:ipusem3@ds211029.mlab.com:11029/ipresults") ;
+
+
+var studentSchema = new Mongoose.Schema({
+    rollNo: String,
+    name: String,
+    results: { type: [{
+        subject: String,
+        marks: String
+    }] }
+});
+
+const studentModel = Mongoose.model("student", studentSchema);
+
 
 const datapath = "./data.txt" ;
 
@@ -14,7 +27,12 @@ fs.readFile('./data.txt', (err, data) => {
     if(err) throw err ;
     data = data.toString() ;
     while( (results = pattern.exec(data)) != null ) {
-        console.log( results[1] + " " + results[2] +  " " + results[5] + " " + results[8] + " " + results[10] + " " + results[12] ) ;
+        var student = new studentModel();
+        student.rollNo = results[1] ;
+        student.name = results[2] ;
+        var log = student.save() ;
+        console.log(log + "\n") ;
+        //console.log( "Roll No. :" + results[1] + " Name: " + results[2] +  " Subjects :" + results[5] + " " + results[8] + " " + results[10] + " Marks :" + results[12] ) ;
     }
     //results = data.match(pattern) ;
     /*results.forEach( element => {
@@ -25,7 +43,7 @@ fs.readFile('./data.txt', (err, data) => {
 
 /* var text = fs.readFileSync(datapath).toString('utf-8');
 console.log(text) ;
-console.log(text.match(pattern)) ; */
+console.log(text.match(pattern)) ; 
 
 
 app.listen( process.env.PORT || 8080, "localhost", function(data) {
@@ -34,4 +52,4 @@ app.listen( process.env.PORT || 8080, "localhost", function(data) {
 
 app.get('/', function(req, res) {
     res.send({some: "hello worldl", SM: "AA"}) ;
-})
+}) */
