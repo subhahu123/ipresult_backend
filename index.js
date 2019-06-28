@@ -3,7 +3,7 @@ const app = express() ;
 const Mongoose = require("mongoose");
 const fs = require('fs') ;
 
-Mongoose.connect("mongodb://result:ipusem3@ds211029.mlab.com:11029/ipresults") ;
+// Mongoose.connect("mongodb://result:ipusem3@ds211029.mlab.com:11029/ipresults") ;
 
 
 var studentSchema = new Mongoose.Schema({
@@ -30,8 +30,13 @@ fs.readFile('./data.txt', (err, data) => {
         var student = new studentModel();
         student.rollNo = results[1] ;
         student.name = results[2] ;
+        var arrSubjects = results[5].split(' ') ;
+        var arrMarks = results[12].split(' ') ;
+        for(var i = 0 ; i < arrMarks.length ; i++)
+            student.results.push({ subject: arrSubjects[i], marks: arrMarks[i] })
         var log = student.save() ;
-        console.log(log + "\n") ;
+
+       // console.log(log + "\n") ;
         //console.log( "Roll No. :" + results[1] + " Name: " + results[2] +  " Subjects :" + results[5] + " " + results[8] + " " + results[10] + " Marks :" + results[12] ) ;
     }
     //results = data.match(pattern) ;
