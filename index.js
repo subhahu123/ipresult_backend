@@ -28,6 +28,6 @@ app.get("/students", async (request, response) => {
     }
 });
 
-app.listen( process.env.PORT || 8080, "localhost", function(data) {
+app.listen( process.env.PORT || 8080, function(data) {
     console.log(data + "App is running at localhost:8080") ;
 }) ;
