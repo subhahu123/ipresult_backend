@@ -23,7 +23,7 @@ const datapath = "./ece.txt" ;
 pattern = /(\d+) ((\w+ )+)SID: .* SchemeID: .*(\r\n)+((\d+\(\d\) *)+)(\r\n)+(\d+ \d+ *)+(\r\n)+([0-9]+)(\r\n)+(\d+\(.+\) *)(\r\n)+/g ;
 
 
-fs.readFile('./ece.txt', (err, data) => {
+fs.readFile('./pe.txt', (err, data) => {
     if(err) throw err ;
     data = data.toString() ;
     while( (results = pattern.exec(data)) != null ) {
