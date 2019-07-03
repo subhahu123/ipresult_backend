@@ -3,7 +3,7 @@ const app = express() ;
 const Mongoose = require("mongoose");
 const fs = require('fs') ;
 
-// Mongoose.connect("mongodb://result:ipusem3@ds211029.mlab.com:11029/ipresults") ;
+Mongoose.connect("mongodb://result:ipusem3@ds211029.mlab.com:11029/ipresults") ;
 
 
 var studentSchema = new Mongoose.Schema({
@@ -18,12 +18,12 @@ var studentSchema = new Mongoose.Schema({
 const studentModel = Mongoose.model("student", studentSchema);
 
 
-const datapath = "./data.txt" ;
+const datapath = "./ece.txt" ;
 
 pattern = /(\d+) ((\w+ )+)SID: .* SchemeID: .*(\r\n)+((\d+\(\d\) *)+)(\r\n)+(\d+ \d+ *)+(\r\n)+([0-9]+)(\r\n)+(\d+\(.+\) *)(\r\n)+/g ;
 
 
-fs.readFile('./data.txt', (err, data) => {
+fs.readFile('./ece.txt', (err, data) => {
     if(err) throw err ;
     data = data.toString() ;
     while( (results = pattern.exec(data)) != null ) {
@@ -34,10 +34,10 @@ fs.readFile('./data.txt', (err, data) => {
         var arrMarks = results[12].split(' ') ;
         for(var i = 0 ; i < arrMarks.length ; i++)
             student.results.push({ subject: arrSubjects[i], marks: arrMarks[i] })
-        var log = student.save() ;
+        var log = student.save() ; 
 
-       // console.log(log + "\n") ;
-        //console.log( "Roll No. :" + results[1] + " Name: " + results[2] +  " Subjects :" + results[5] + " " + results[8] + " " + results[10] + " Marks :" + results[12] ) ;
+        //console.log(log + "\n") ;
+        console.log( "Roll No. :" + results[1] + " Name: " + results[2] +  " Subjects :" + results[5] + " " + results[8] + " " + results[10] + " Marks :" + results[12] ) ;
     }
     //results = data.match(pattern) ;
     /*results.forEach( element => {
