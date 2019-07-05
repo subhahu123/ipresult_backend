@@ -21,7 +21,7 @@ var studentSchema = new Mongoose.Schema({
 
 //const studentModel = Mongoose.model("1", studentSchema);
 //const studentModel = Mongoose.model("2", studentSchema);
-const studentModel = Mongoose.model("1", studentSchema);
+const studentModel = Mongoose.model("4", studentSchema);
 //const studentModel = Mongoose.model("4", studentSchema);
 //const studentModel = Mongoose.model("5", studentSchema);
 //const studentModel = Mongoose.model("6", studentSchema);
@@ -30,19 +30,19 @@ const studentModel = Mongoose.model("1", studentSchema);
 
 
 const datapath = "./ece.txt";
-
+// patter for all
 // pattern = /(\d+) ((\w+ )+)SID: .* SchemeID: .*(\r\n)+((\d+\(\d\) *)+)(\r\n)+(\d+ \d+ *)+(\r\n)+([0-9]+)(\r\n)+(\d+\(.+\) *)(\r\n)+/g;
 
-// patter for sem 1st
-   pattern = /(\d+) ((\w+ )+)SID: .* SchemeID: .*(\r\n)+((\d+\(\d\) *)+)(\r\n)+(.*)(\r\n)(.*)\r\n.*(\r\n)+(\d+\(.+\) *)(\r\n)/g ;
+// patter for sem 1st and sem 4th
+//   pattern = /(\d+) ((\w+ )+)SID: .* SchemeID: .*(\r\n)+((\d+\(\d\) *)+)(\r\n)+(.*)(\r\n)(.*)\r\n.*(\r\n)+(\d+\(.+\) *)(\r\n)/g ;
 
-var dir = './1'
+var dir = './4'
 
-//fs.readdir(dir, (err, list) => {
-  //  console.log(list.length);
-    //list.forEach((file) => {
-      //  console.log(file);
-        fs.readFile('./3/cse.txt', (err, data) => {
+fs.readdir(dir, (err, list) => {
+    console.log(list.length);
+    list.forEach((file) => {
+        console.log(file);
+        fs.readFile(dir + '/' + file, (err, data) => {
             if (err) throw err;
             data = data.toString();
             while ((results = pattern.exec(data)) != null) {
@@ -67,10 +67,10 @@ var dir = './1'
             });*/
             //console.log(data.toString()) ;
         });
-  //  })
+    })
 
     // console.log("success @@@@@@@@@@@@@%%%%%%%%%%%%%%%%%^^^^^^^") ;
-// })
+ })
 
 
 /*
