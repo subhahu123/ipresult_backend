@@ -3,19 +3,30 @@ const app = express() ;
 const Mongoose = require("mongoose");
 const fs = require('fs') ;
 
-Mongoose.connect("mongodb://result:ipusem3@ds211029.mlab.com:11029/ipresults") ;
+// Mongoose.connect("mongodb://result:ipusem3@ds211029.mlab.com:11029/ipresults") ;
+Mongoose.connect("mongodb://ip:results123@ds347367.mlab.com:47367/ipuresult") ;
 
 
 var studentSchema = new Mongoose.Schema({
     rollNo: String,
     name: String,
-    results: { type: [{
-        subject: String,
-        marks: String
-    }] }
+    results: {
+        type: [{
+            subject: String,
+            marks: String
+        }]
+    }
 });
 
-const studentModel = Mongoose.model("student", studentSchema);
+
+//const studentModel = Mongoose.model("1", studentSchema);
+//const studentModel = Mongoose.model("2", studentSchema);
+const studentModel = Mongoose.model("3", studentSchema);
+//const studentModel = Mongoose.model("4", studentSchema);
+//const studentModel = Mongoose.model("5", studentSchema);
+//const studentModel = Mongoose.model("6", studentSchema);
+//const studentModel = Mongoose.model("7", studentSchema);
+//const studentModel = Mongoose.model("8", studentSchema);
 
 
 const datapath = "./ece.txt" ;
@@ -23,7 +34,7 @@ const datapath = "./ece.txt" ;
 pattern = /(\d+) ((\w+ )+)SID: .* SchemeID: .*(\r\n)+((\d+\(\d\) *)+)(\r\n)+(\d+ \d+ *)+(\r\n)+([0-9]+)(\r\n)+(\d+\(.+\) *)(\r\n)+/g ;
 
 
-fs.readFile('./pe.txt', (err, data) => {
+fs.readFile('./cse.txt', (err, data) => {
     if(err) throw err ;
     data = data.toString() ;
     while( (results = pattern.exec(data)) != null ) {
