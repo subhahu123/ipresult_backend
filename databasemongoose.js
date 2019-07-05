@@ -21,7 +21,7 @@ var studentSchema = new Mongoose.Schema({
 
 //const studentModel = Mongoose.model("1", studentSchema);
 //const studentModel = Mongoose.model("2", studentSchema);
-const studentModel = Mongoose.model("3", studentSchema);
+const studentModel = Mongoose.model("6", studentSchema);
 //const studentModel = Mongoose.model("4", studentSchema);
 //const studentModel = Mongoose.model("5", studentSchema);
 //const studentModel = Mongoose.model("6", studentSchema);
@@ -33,7 +33,7 @@ const datapath = "./ece.txt";
 
 pattern = /(\d+) ((\w+ )+)SID: .* SchemeID: .*(\r\n)+((\d+\(\d\) *)+)(\r\n)+(\d+ \d+ *)+(\r\n)+([0-9]+)(\r\n)+(\d+\(.+\) *)(\r\n)+/g;
 
-var dir = './2'
+var dir = './6'
 
 fs.readdir(dir, (err, list) => {
     console.log(list.length);
