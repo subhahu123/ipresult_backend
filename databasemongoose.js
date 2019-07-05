@@ -33,7 +33,7 @@ const datapath = "./ece.txt";
 
 pattern = /(\d+) ((\w+ )+)SID: .* SchemeID: .*(\r\n)+((\d+\(\d\) *)+)(\r\n)+(\d+ \d+ *)+(\r\n)+([0-9]+)(\r\n)+(\d+\(.+\) *)(\r\n)+/g;
 
-var dir = './3'
+var dir = './2'
 
 fs.readdir(dir, (err, list) => {
     console.log(list.length);
@@ -56,7 +56,7 @@ fs.readdir(dir, (err, list) => {
                 var log = student.save();
 
                 //console.log(log + "\n") ;
-                //    console.log( "Roll No. :" + results[1] + " Name: " + results[2] +  " Subjects :" + results[5] + " " + results[8] + " " + results[10] + " Marks :" + results[12] ) ;
+               console.log( "Roll No. :" + results[1] + " Name: " + results[2] +  " Subjects :" + results[5] + " " + results[8] + " " + results[10] + " Marks :" + results[12] ) ;
             }
             //results = data.match(pattern) ;
             /*results.forEach( element => {
