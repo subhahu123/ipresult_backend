@@ -21,7 +21,7 @@ var studentSchema = new Mongoose.Schema({
 
 //const studentModel = Mongoose.model("1", studentSchema);
 //const studentModel = Mongoose.model("2", studentSchema);
-const studentModel = Mongoose.model("6", studentSchema);
+const studentModel = Mongoose.model("1", studentSchema);
 //const studentModel = Mongoose.model("4", studentSchema);
 //const studentModel = Mongoose.model("5", studentSchema);
 //const studentModel = Mongoose.model("6", studentSchema);
@@ -31,15 +31,18 @@ const studentModel = Mongoose.model("6", studentSchema);
 
 const datapath = "./ece.txt";
 
-pattern = /(\d+) ((\w+ )+)SID: .* SchemeID: .*(\r\n)+((\d+\(\d\) *)+)(\r\n)+(\d+ \d+ *)+(\r\n)+([0-9]+)(\r\n)+(\d+\(.+\) *)(\r\n)+/g;
+// pattern = /(\d+) ((\w+ )+)SID: .* SchemeID: .*(\r\n)+((\d+\(\d\) *)+)(\r\n)+(\d+ \d+ *)+(\r\n)+([0-9]+)(\r\n)+(\d+\(.+\) *)(\r\n)+/g;
 
-var dir = './6'
+// patter for sem 1st
+   pattern = /(\d+) ((\w+ )+)SID: .* SchemeID: .*(\r\n)+((\d+\(\d\) *)+)(\r\n)+(.*)(\r\n)(.*)\r\n.*(\r\n)+(\d+\(.+\) *)(\r\n)/g ;
 
-fs.readdir(dir, (err, list) => {
-    console.log(list.length);
-    list.forEach((file) => {
-        console.log(file);
-        fs.readFile(dir + '/' + file, (err, data) => {
+var dir = './1'
+
+//fs.readdir(dir, (err, list) => {
+  //  console.log(list.length);
+    //list.forEach((file) => {
+      //  console.log(file);
+        fs.readFile('./3/cse.txt', (err, data) => {
             if (err) throw err;
             data = data.toString();
             while ((results = pattern.exec(data)) != null) {
@@ -56,7 +59,7 @@ fs.readdir(dir, (err, list) => {
                 var log = student.save();
 
                 //console.log(log + "\n") ;
-               console.log( "Roll No. :" + results[1] + " Name: " + results[2] +  " Subjects :" + results[5] + " " + results[8] + " " + results[10] + " Marks :" + results[12] ) ;
+               console.log( "Roll No. :" + results[1] + " Name: " + results[2] +  " Subjects :" + results[5] + " " + results[8] + " @ " + results[10] + " Marks :" + results[12] ) ;
             }
             //results = data.match(pattern) ;
             /*results.forEach( element => {
@@ -64,8 +67,10 @@ fs.readdir(dir, (err, list) => {
             });*/
             //console.log(data.toString()) ;
         });
-    })
-})
+  //  })
+
+    // console.log("success @@@@@@@@@@@@@%%%%%%%%%%%%%%%%%^^^^^^^") ;
+// })
 
 
 /*
