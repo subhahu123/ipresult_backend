@@ -34,7 +34,7 @@ const datapath = "./ece.txt";
 // pattern = /(\d+) ((\w+ )+)SID: .* SchemeID: .*(\r\n)+((\d+\(\d\) *)+)(\r\n)+(\d+ \d+ *)+(\r\n)+([0-9]+)(\r\n)+(\d+\(.+\) *)(\r\n)+/g;
 
 // patter for sem 1st and sem 4th
-//   pattern = /(\d+) ((\w+ )+)SID: .* SchemeID: .*(\r\n)+((\d+\(\d\) *)+)(\r\n)+(.*)(\r\n)(.*)\r\n.*(\r\n)+(\d+\(.+\) *)(\r\n)/g ;
+   pattern = /(\d+) ((\w+ )+)SID: .* SchemeID: .*(\r\n)+((\d+\(\d\) *)+)(\r\n)+(.*)(\r\n)(.*)\r\n.*(\r\n)+(\d+\(.+\) *)(\r\n)/g ;
 
 var dir = './4'
 
