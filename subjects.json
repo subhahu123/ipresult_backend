@@ -1,50 +1,50 @@
 {
-    "99102": {
-        "papercode": "ETMA102",
-        "subject": "APPLIED MATHEMATICS"
+    "99202": {
+        "papercode": "ETMA202",
+        "subject": "APPLIED MATHEMATICS "
     },
-    "99104": {
-        "papercode": "ETPH104",
-        "subject": "APPLIED PHYSICS"
+    "27204": {
+        "papercode": "ETCS204",
+        "subject": "COMPUTER ORGANIZATION AND ARCHITECTURE"
     },
-    "28106": {
-        "papercode": "ETEC106",
-        "subject": "ELECTRONIC DEVICES"
+    "27206": {
+        "papercode": "ETCS206",
+        "subject": "THEORY OF COMPUTATION"
     },
-    "27108": {
-        "papercode": "ETCS108",
-        "subject": "INTRODUCTION TO PROGRAMMING"
+    "27208": {
+        "papercode": "ETCS208",
+        "subject": "DATABASE MANAGEMENT SYSTEMS"
     },
-    "36110": {
-        "papercode": "ETME110",
-        "subject": "ENGINEERING MECHANICS"
+    "27210": {
+        "papercode": "ETCS210",
+        "subject": "OBJECT ORIENTED PROGRAMMING"
     },
-    "98112": {
-        "papercode": "ETHS112",
-        "subject": "COMMUNICATIONS SKILLS"
+    "28212": {
+        "papercode": "ETEC212",
+        "subject": "COMMUNICATION SYSTEMS"
     },
-    "56114": {
-        "papercode": "ETEN114",
-        "subject": "ENVIRONMENTAL STUDIES"
+    "99250": {
+        "papercode": "ETEN250",
+        "subject": "NCC"
     },
-    "99152": {
-        "papercode": "ETPH152",
-        "subject": "APPLIED PHYSICS LAB"
+    "99252": {
+        "papercode": "ETMA252",
+        "subject": "APPLIED MATHEMATICS LAB"
     },
-    "27154": {
-        "papercode": "ETCS154",
-        "subject": "PROGRAMMING LAB"
+    "27254": {
+        "papercode": "ETCS254",
+        "subject": "COMPUTER ORGANIZATION AND ARCHITECTURE LAB"
     },
-    "28156": {
-        "papercode": "ETEC156",
-        "subject": "ELECTRONIC DEVICES LAB"
+    "27256": {
+        "papercode": "ETCS256",
+        "subject": "DATABASE MANAGEMENT SYSTEMSLAB"
     },
-    "36158": {
-        "papercode": "ETME158",
-        "subject": "ENGINEERING MECHANICS LAB"
+    "28256": {
+        "papercode": "ETEC256",
+        "subject": "COMMUNICATION SYSTEMS LAB"
     },
-    "56160": {
-        "papercode": "ETEN160",
-        "subject": "ENVIRONMENTAL STUDIES LAB"
-    }
+    "27258": {
+        "papercode": "ETCS258",
+        "subject": "OBJECT ORIENTED PROGRAMMING LAB"
+    },
 }
