@@ -1,0 +1,51 @@
+S.No. Photo. (.)*\n\nRoll no./Name(.)*\n(((\d*) (.*) SID: (\d*) SchemeID: (\d*)\n*)*)(.*\n)*Institution Code: .*\n(.* *\n*)Institution: (.*)\n(.*\n\n(.*)\n*)*
+
+
+
+
+S.No. Photo. (.)*\n\nRoll no.\/Name (((\d*) (.*) SID: (\d*) SchemeID: (\d*)\n*)*)\n(.*\n)*Institution Code: .*\n(.* *\n*)Institution: (.*)\n\n(.*\n\n(.*)\n*)*CS
+
+
+
+
+
+
+S.No. Photo. .*\n\nRoll no.\/Name ((\d* .* SID: \d* SchemeID: \d*\n*)*)\n(.*\n)*Institution Code: \d*\n(.* *\n*)Institution: (.*)\n\n(.*\n\n(.*)\n*)*CS
+
+
+
+*******
+
+
+
+moving to final
+
+S.No. Photo. .*\n\nRoll no.\/Name ((\d* .* SID: \d* SchemeID: \d*\n)*)\n((\d*\(.\) *)*)\n\nInstitution Code: \d*\n\nInstitution: (.*)\n\n(.*\n\n(.*)\n*)*CS
+
+
+***********
+
+
+*****************%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+near finall )))))))))))))) @@@@@@@@2#############################################################################
+
+S.No. Photo. .*\n\nRoll no.\/Name ((\d* .* SID: \d* SchemeID: \d*\n)*)\n((\d*\(.\) *)*)\n\nInstitution Code: \d*\n\nInstitution: (.*)\n\n(((\d*\(.\) *)*\n\n.*\n*)*)CS
+
+
+$$$$$$$$$$$$$$$$$%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+S.No. Photo. .*\n\nRoll no.\/Name ((\d* .* SID: \d* SchemeID: \d*\n)*)\n((\d*\(.\)\n*)*)\n\nInstitution Code: \d*\n\nInstitution: (.*)\n\n(((\d*\(.\) *)*\n\n.*\n*)*)CS
+
+
+
+
+
+
+
+
+
+
