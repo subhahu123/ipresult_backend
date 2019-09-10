@@ -36,33 +36,44 @@ const datapath = "./ece.txt";
 // patter for sem 1st and sem 4th
 //   pattern = /(\d+) ((\w+ )+)SID: .* SchemeID: .*(\r\n)+((\d+\(\d\) *)+)(\r\n)+(.*)(\r\n)(.*)\r\n.*(\r\n)+(\d+\(.+\) *)(\r\n)/g ;
 // final patter for  norma = /S.No. Photo. .*\n\nRoll no.\/Name ((\d* .* SID: \d* SchemeID: \d*\n)*)\n((\d*\(.\)\n*)*)\n\nInstitution Code: \d*\n\nInstitution: (.*)\n\n(((\d*\(.\) *)*\n\n.*\n*)*)CS/g
-patterfor_normal = /S.No. Photo. .*(\r\n)(\r\n)Roll no.\/Name  *(\r\n)*((\d* .* SID: \d* SchemeID: \d*(\r\n))*)(\r\n)((\d*\(.\)(\r\n)*)*)(\r\n)(\r\n)Institution Code: \d*(\r\n)(\r\n)Institution: (.*)(\r\n)(\r\n)(((\d*\(.\) *)*(\r\n)(\r\n).*(\r\n)*)*)CS/g ;
+patterfor_normal = /S.No. Photo. .*(\r\n)(\r\n)Roll no.\/Name  *(\r\n)*((\d* .* SID: \d* SchemeID: \d*(\r\n))*)(\r\n)((\d*\(.\)(\r\n)*)*)(\r\n)(\r\n)Institution Code: \d*(\r\n)(\r\n)Institution: (.*)(\r\n)(\r\n)(((\d*\(.\) *)*(\r\n)(\r\n).*(\r\n)*)*)/g ;
 
 
 var dir = './3'
 
-fs.readdir(dir, (err, list) => {
+/* fs.readdir(dir, (err, list) => {
     console.log(list.length);
     list.forEach((file) => {
-        console.log(file);
-        fs.readFile(dir + '/' + file, (err, data) => {
+        console.log(file); */
+        // fs.readFile(dir + '/' + file, (err, data) => {
+        fs.readFile('./3/ece1.txt', (err, data) => {
             if (err) throw err;
             data = data.toString();
             while ((results = patterfor_normal.exec(data)) != null) {
-                var student = new studentModel();
-                student.rollNo = results[1];
-                student.name = results[2];
-                var arrSubjects = results[5].split(' ');
-                var arrMarks = results[12].split(' ');
-                for (var i = 0; i < arrMarks.length; i++)
-                    student.results.push({
-                        subject: arrSubjects[i],
-                        marks: arrMarks[i]
-                    })
-                //var log = student.save();
+              //  var student = new studentModel();
+              //  student.rollNo = results[1];
+              //  student.name = results[2];
+              //  var arrSubjects = results[5].split(' ');
+              //  var arrMarks = results[12].split(' ');
+              //  for (var i = 0; i < arrMarks.length; i++)
+              //      student.results.push({
+              //          subject: arrSubjects[i],
+              //          marks: arrMarks[i]
+              //      })
+              // var log = student.save();
 
                 //console.log(log + "\n") ;
-               console.log( "Roll No. :" + results[1] + " Name: " + results[2] +  " Subjects :" + results[5] + " " + results[8] + " @ " + results[10] + " Marks :" + results[12] ) ;
+               console.log( "Roll No. :\n" + results[4] + " ###############\n\n" +  " Subjects :" +  results[8] + "\n %%%%%$#### \n" + results[18] + " Marks :" + results[19] ) ;
+            
+                var studentdata = results[4].split('\r\n') ;
+                console.log(studentdata) 
+            //    studentdata.forEach( (data) => console.log(data + '\n\n') ) ;
+                console.log('subhahu\n')
+                var subjectdata
+                if(results[19] != undefined) {
+                    subjectdata = results[19].split('\r\n\r\n')
+                //    console.log(subjectdata[0]) 
+                }
             }
             //results = data.match(pattern) ;
             /*results.forEach( element => {
@@ -70,10 +81,10 @@ fs.readdir(dir, (err, list) => {
             });*/
             //console.log(data.toString()) ;
         });
-    })
+  //  })
 
     // console.log("success @@@@@@@@@@@@@%%%%%%%%%%%%%%%%%^^^^^^^") ;
- })
+ // })
 
 
 /*

@@ -49,3 +49,12 @@ S.No. Photo. .*\n\nRoll no.\/Name ((\d* .* SID: \d* SchemeID: \d*\n)*)\n((\d*\(.
 
 
 
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+S.No. Photo. .*\n\nRoll no.\/Name ((\d* .* SID: \d* SchemeID: \d*\n)*)\n((\d*\(.\)\n*)*)\n\nInstitution Code: \d*\n\nInstitution: (.*)\n\n(((\d*\(.\) *)*\n\n.*\n*)*)
+
+
+
+#$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$
+
+
