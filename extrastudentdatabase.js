@@ -35,8 +35,8 @@ const datapath = "./ece.txt";
 
 // patter for sem 1st and sem 4th
 //   pattern = /(\d+) ((\w+ )+)SID: .* SchemeID: .*(\r\n)+((\d+\(\d\) *)+)(\r\n)+(.*)(\r\n)(.*)\r\n.*(\r\n)+(\d+\(.+\) *)(\r\n)/g ;
-
-patterfor_normal = /S.No. Photo. .*\n\nRoll no.\/Name  *\n*((\d* .* SID: \d* SchemeID: \d*\n)*)\n((\d*\(.\)\n*)*)\n\nInstitution Code: \d*\n\nInstitution: (.*)\n\n(((\d*\(.\) *)*\n\n.*\n*)*)CS/
+// final patter for  norma = /S.No. Photo. .*\n\nRoll no.\/Name ((\d* .* SID: \d* SchemeID: \d*\n)*)\n((\d*\(.\)\n*)*)\n\nInstitution Code: \d*\n\nInstitution: (.*)\n\n(((\d*\(.\) *)*\n\n.*\n*)*)CS/g
+patterfor_normal = /S.No. Photo. .*(\r\n)(\r\n)Roll no.\/Name  *(\r\n)*((\d* .* SID: \d* SchemeID: \d*(\r\n))*)(\r\n)((\d*\(.\)(\r\n)*)*)(\r\n)(\r\n)Institution Code: \d*(\r\n)(\r\n)Institution: (.*)(\r\n)(\r\n)(((\d*\(.\) *)*(\r\n)(\r\n).*(\r\n)*)*)CS/g ;
 
 
 var dir = './3'
@@ -48,7 +48,7 @@ fs.readdir(dir, (err, list) => {
         fs.readFile(dir + '/' + file, (err, data) => {
             if (err) throw err;
             data = data.toString();
-            while ((results = pattern.exec(data)) != null) {
+            while ((results = patterfor_normal.exec(data)) != null) {
                 var student = new studentModel();
                 student.rollNo = results[1];
                 student.name = results[2];
