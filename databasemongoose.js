@@ -13,15 +13,17 @@ var studentSchema = new Mongoose.Schema({
     results: {
         type: [{
             subject: String,
-            marks: String
+            marks: String,
+            internal: String,
+            External: String
         }]
     }
 });
 
 
-//const studentModel = Mongoose.model("1", studentSchema);
+const studentModel = Mongoose.model("1", studentSchema);
 //const studentModel = Mongoose.model("2", studentSchema);
-const studentModel = Mongoose.model("4", studentSchema);
+//const studentModel = Mongoose.model("4", studentSchema);
 //const studentModel = Mongoose.model("4", studentSchema);
 //const studentModel = Mongoose.model("5", studentSchema);
 //const studentModel = Mongoose.model("6", studentSchema);
@@ -34,9 +36,9 @@ const datapath = "./ece.txt";
 // pattern = /(\d+) ((\w+ )+)SID: .* SchemeID: .*(\r\n)+((\d+\(\d\) *)+)(\r\n)+(\d+ \d+ *)+(\r\n)+([0-9]+)(\r\n)+(\d+\(.+\) *)(\r\n)+/g;
 
 // patter for sem 1st and sem 4th
-   pattern = /(\d+) ((\w+ )+)SID: .* SchemeID: .*(\r\n)+((\d+\(\d\) *)+)(\r\n)+(.*)(\r\n)(.*)\r\n.*(\r\n)+(\d+\(.+\) *)(\r\n)/g ;
+pattern = /(\d+) ((\w+ )+)SID: .* SchemeID: .*(\r\n)+((\d+\(\d\) *)+)(\r\n)+(.*)(\r\n)(.*)\r\n.*(\r\n)+(\d+\(.+\) *)(\r\n)/g;
 
-var dir = './4'
+var dir = './8'
 
 fs.readdir(dir, (err, list) => {
     console.log(list.length);
@@ -51,15 +53,37 @@ fs.readdir(dir, (err, list) => {
                 student.name = results[2];
                 var arrSubjects = results[5].split(' ');
                 var arrMarks = results[12].split(' ');
-                for (var i = 0; i < arrMarks.length; i++)
+
+                var internalExternal = results[8].split(' ');
+                var external;
+                console.log('lenght' + arrMarks.length);
+                console.log('rroll' + results[1])
+                for (var i = 0; i < arrMarks.length; i++) {
+
+                    console.log('\ninternal: ' + internalExternal[2 * i] + '\n');
+                    if (internalExternal[2 * i + 1] != undefined)
+                        console.log(internalExternal[2 * i + 1]);
+                    else
+                        console.log('-');
+                }
+
+                for (var i = 0; i < arrMarks.length; i++) {
+                    if (internalExternal[2 * i + 1] != undefined)
+                        external = internalExternal[2 * i + 1];
+                    else
+                        external = '-';
                     student.results.push({
                         subject: arrSubjects[i],
-                        marks: arrMarks[i]
+                        marks: arrMarks[i],
+                        external: external,
+                        internal: internalExternal[2 * i]
                     })
-                var log = student.save();
+                    console.log('\nmonnglose' + external + '\n\n')
+                }
+                //    var log = student.save();
 
                 //console.log(log + "\n") ;
-               console.log( "Roll No. :" + results[1] + " Name: " + results[2] +  " Subjects :" + results[5] + " " + results[8] + " @ " + results[10] + " Marks :" + results[12] ) ;
+                //  console.log( "Roll No. :" + results[1] + " Name: " + results[2] +  " Subjects :" + results[5] + "internal external" + results[8] + "@ " + results[10] + " Marks :" + results[12] ) ;
             }
             //results = data.match(pattern) ;
             /*results.forEach( element => {
@@ -70,7 +94,7 @@ fs.readdir(dir, (err, list) => {
     })
 
     // console.log("success @@@@@@@@@@@@@%%%%%%%%%%%%%%%%%^^^^^^^") ;
- })
+})
 
 
 /*
